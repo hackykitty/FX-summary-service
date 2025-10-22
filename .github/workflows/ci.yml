@@ -7,10 +7,26 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
-      - run: pytest -q
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # optional: ensure pytest config
+          echo "[pytest]" > pytest.ini
+          echo "pythonpath = ." >> pytest.ini
+          echo "asyncio_default_fixture_loop_scope = function" >> pytest.ini
+
+      - name: 🧪 Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: pytest -q
