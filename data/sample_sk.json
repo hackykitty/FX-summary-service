@@ -1,0 +1,23 @@
+{
+  "series": [
+    {
+      "date": "2025-07-01",
+      "from": "EUR",
+      "to": "USD",
+      "rate": 1.09
+    },
+    {
+      "date": "2025-07-02",
+      "from": "EUR",
+      "to": "USD",
+      "rate": 1.102
+    },
+    {
+      "date": "2025-07-03",
+      "from": "EUR",
+      "to": "USD",
+      "rate": 1.0975
+    }
+  ],
+  "source": "sample"
+}
