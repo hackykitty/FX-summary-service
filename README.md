@@ -1,4 +1,4 @@
-# SK Summary (FastAPI · Frankfurter-corrected)
+# SK Summary (FastAPI · Frankfurter API v1)
 
 A lightweight FastAPI microservice that fetches EUR→USD exchange rates from the **[Frankfurter.dev v1 API](https://www.frankfurter.dev/)**,  
 computes daily percentage changes and summary statistics, and falls back to a local JSON file if the network is unavailable.
